@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>EXPENSE TRACKER</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>EXPENSE TRACKER</h1>
+    </header>
+
+    <section class="container">
+      <form onsubmit="savetoLocalStorage(event)" id="my-form">
+        <h1>Add User</h1>
+        <div class="msg"></div>
+        <div>
+          <label for="name">Choose Expense Amount:</label>
+          <input type="text"name="expenseamount" id="name">
+        </div>
+        <div>
+          <label for="description">Choose Description:</label>
+          <input type="text"name="description" id="description">
+        </div>
+        <div>
+          <label for="Category">Choose Category:</label>
+          <select id="Category" name="Category">
+            <option value="Movie">Movie</option>
+            <option value="Movie">Food</option>
+            <option value="Movie">Travel</option>
+            <option value="Movie">Insurance</option>
+            </select>
+        </div>
+        <input class="btn" type="submit" value="Submit">
+      </form>
+
+      <ul id="users"></ul>
+
+    </section>
+    
+
+    <script src="form.js"></script>
+  </body>
+</html>
