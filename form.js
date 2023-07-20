@@ -19,6 +19,20 @@ function savetoserver(event){
     })
    // showuseronscreen(obj)
 }
+
+window.addEventListener('DOMContentLoaded',(()=>{
+axios.get('https://crudcrud.com/api/ddc12ad9e62f42aca625c59d11fe5345/appointmentdata')
+.then((response)=>{
+for(var i=0;i<response.data.length;i++)
+{
+    showuseronscreen(response.data[i])
+}
+}
+)
+.catch((err)=>{
+    console.log(err)
+})}))
+
 function showuseronscreen(obj){
     const parentelement=document.getElementById('users')
     const childelement=document.createElement('li')
