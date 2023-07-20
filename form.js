@@ -1,21 +1,28 @@
-function savetoLocalStorage(event){
+function savetoserver(event){
     event.preventDefault();
-    const expenseamount=event.target.expenseamount.value
-    const description=event.target.description.value
-    const category=event.target.Category.value
+    const Name=event.target.name.value
+    const Email=event.target.email.value
+    const Contact=event.target.contact.value
     
     const obj={
-        expenseamount,
-        description,
-        category
+        Name,
+        Email,
+        Contact
     }
-    localStorage.setItem(obj.description,JSON.stringify(obj))
-    showuseronscreen(obj)
+    axios.post('https://crudcrud.com/api/ddc12ad9e62f42aca625c59d11fe5345/appointmentdata',obj)
+    .then((response)=> {
+        showuseronscreen(response.data)
+        console.log(response)
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+   // showuseronscreen(obj)
 }
 function showuseronscreen(obj){
     const parentelement=document.getElementById('users')
     const childelement=document.createElement('li')
-    childelement.textContent=obj.expenseamount+ '|' + obj.description +  '|' +obj.category
+    childelement.textContent=obj.Name+ '|' + obj.Email +  '|' +obj.Contact
     const deletebtn=document.createElement('button')
     const editbtn=document.createElement('button')
 
@@ -31,15 +38,16 @@ function showuseronscreen(obj){
     editbtn.style.padding='10px 20px'
     editbtn.style.float='right'
     deletebtn.onclick=()=>{
-        localStorage.removeItem(obj.description)
+        localStorage.removeItem(obj.Email)
         parentelement.removeChild(childelement)
     }
 
     editbtn.onclick=()=>{
-        localStorage.removeItem(obj.description)
+        localStorage.removeItem(obj.Email)
         parentelement.removeChild(childelement)
-        document.getElementById('name').value=obj.expenseamount
-        document.getElementById('description').value=obj.description
+        document.getElementById('name').value=obj.Name
+        document.getElementById('email').value=obj.Email
+        document.getElementById('contact').value=obj.Contact
     }
     childelement.appendChild(deletebtn)
     childelement.appendChild(editbtn)

@@ -4,34 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>EXPENSE TRACKER</title>
+    <title>BOOKING APPOINTMENT</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <header>
-      <h1>EXPENSE TRACKER</h1>
+      <h1>BOOKING APPOINTMENT</h1>
     </header>
 
     <section class="container">
-      <form onsubmit="savetoLocalStorage(event)" id="my-form">
+      <form onsubmit="savetoserver(event)" id="my-form">
         <h1>Add User</h1>
         <div class="msg"></div>
         <div>
-          <label for="name">Choose Expense Amount:</label>
-          <input type="text"name="expenseamount" id="name">
+          <label for="name">User Name:</label>
+          <input type="text"name="name" id="name">
         </div>
         <div>
-          <label for="description">Choose Description:</label>
-          <input type="text"name="description" id="description">
+          <label for="email">Email Id:</label>
+          <input type="email"name="email" id="email">
         </div>
         <div>
-          <label for="Category">Choose Category:</label>
-          <select id="Category" name="Category">
-            <option value="Movie">Movie</option>
-            <option value="Movie">Food</option>
-            <option value="Movie">Travel</option>
-            <option value="Movie">Insurance</option>
-            </select>
+          <label for="contact">Phone Number:</label>
+          <input type="text"name="contact" id="contact">
+          
         </div>
         <input class="btn" type="submit" value="Submit">
       </form>
@@ -40,7 +36,7 @@
 
     </section>
     
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
     <script src="form.js"></script>
   </body>
 </html>
