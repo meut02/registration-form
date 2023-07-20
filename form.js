@@ -52,7 +52,13 @@ function showuseronscreen(obj){
     editbtn.style.padding='10px 20px'
     editbtn.style.float='right'
     deletebtn.onclick=()=>{
-        localStorage.removeItem(obj.Email)
+        axios.delete(`https://crudcrud.com/api/ddc12ad9e62f42aca625c59d11fe5345/appointmentdata/${obj._id}`)
+        .then((response)=> {
+            console.log(response)
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
         parentelement.removeChild(childelement)
     }
 
