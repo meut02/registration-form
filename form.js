@@ -63,7 +63,13 @@ function showuseronscreen(obj){
     }
 
     editbtn.onclick=()=>{
-        localStorage.removeItem(obj.Email)
+        axios.delete(`https://crudcrud.com/api/ddc12ad9e62f42aca625c59d11fe5345/appointmentdata/${obj._id}`)
+        .then((response)=> {
+            console.log(response)
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
         parentelement.removeChild(childelement)
         document.getElementById('name').value=obj.Name
         document.getElementById('email').value=obj.Email
