@@ -13,7 +13,7 @@
     </header>
 
     <section class="container">
-      <form onsubmit="savetoLocalStorage(event)" id="my-form">
+      <form onsubmit="savetoserver(event)" id="my-form">
         <h1>Add User</h1>
         <div class="msg"></div>
         <div>
@@ -28,9 +28,9 @@
           <label for="Category">Choose Category:</label>
           <select id="Category" name="Category">
             <option value="Movie">Movie</option>
-            <option value="Movie">Food</option>
-            <option value="Movie">Travel</option>
-            <option value="Movie">Insurance</option>
+            <option value="Food">Food</option>
+            <option value="Travel">Travel</option>
+            <option value="Insurance">Insurance</option>
             </select>
         </div>
         <input class="btn" type="submit" value="Submit">
@@ -39,6 +39,12 @@
       <ul id="users"></ul>
 
     </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js
+
+
+
+"></script>
     
 
     <script src="form.js"></script>
